@@ -1,0 +1,11 @@
+uvicorn
+pydantic
+fastapi
+anyio
+setuptools
+sniffio
+starlette
+click
+pip
+pandas
+fuzzywuzzy
