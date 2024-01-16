@@ -56,7 +56,7 @@ Query parameters: limit, offset, and pagesize for flexible pagination.
 Pydantic models: Ensure data validation and clarity.
 Offset calculation: Handle both offset and page parameters for convenience.
 '''
-async def get_paginated_songs_data(limit:int,offset:int,pagesize:int):
+async def get_paginated_songs_data(limit:int,offset:int):
     song_data = load_data(song_data_df)
     end_offset = offset + limit
     print("")

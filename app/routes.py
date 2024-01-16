@@ -19,14 +19,13 @@ async def health_check():
     """
     return 200
 
-@router.get("/all/limit/{limit}/offset/{offset}/pagesize/{pagesize}")
+@router.get("/all/limit/{limit}/offset/{offset}")
 async def get_songs(
     limit : Annotated[int, Path(title="limit of data to be returned")],
-    offset: Annotated[int, Path(title="offset of data to be returned")],
-    pagesize: Annotated[int, Path(title="pagesize of data to be returned")]):
+    offset: Annotated[int, Path(title="offset of data to be returned")]):
     
-    print(f"GET PAGINATED SONG CALLED WITH limit:{limit} ,offset: {offset}, pagesize:{pagesize}")
-    res = await get_paginated_songs_data(limit,offset,pagesize)
+    print(f"GET PAGINATED SONG CALLED WITH limit:{limit} ,offset: {offset}")
+    res = await get_paginated_songs_data(limit,offset)
     return {"data": res}
 
 @router.get("/attribute/title/{title}")
